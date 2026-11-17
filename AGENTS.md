@@ -21,6 +21,12 @@ contracts below are strict.
 
 ## Commands
 
+`just check` and `just audit-source` own build-free self-workflow
+feedback. `just test` is the original complete core contract suite, including
+executable controls; source syntax success is not that suite's result.
+The existing pinned/token-authenticated online audit, all negative native gates
+and the separate touched tier remain required in CI.
+
 ```bash
 python3.13 -I -B -m venv --copies .venv
 uv pip install --python .venv/bin/python --require-hashes -r requirements-ci.txt  # PyYAML only

@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Move the self-workflow source audit to the published shared CI caller and Just commands; keep all product/native gates and add complete daily diagnostic reporting.
+
 - Default `osv-scan.yml` to osv-scanner 2.5.0. The reusable defaulted to 2.4.0
   while `macos-ubuntu-bootstrap`'s device contract installs 2.5.0 on every Ubuntu
   desktop, so a developer's machine and this repository's own merge gate were
