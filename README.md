@@ -331,6 +331,21 @@ Harden-Runner reference. This file-level separation is intentional: the action
 has `pre` and `post` entry points that GitHub can execute even when a step-level
 `if` evaluates to false, so a boolean toggle is not a safe disable mechanism.
 
+## Maintaining this source
+
+`just setup-checks` prepares the existing hash-locked Python dependency;
+`just check` runs build-free syntax and self-workflow audits.
+`just audit-source` retains complete secret history, or accepts an explicit
+pull request range. `just test` runs the original core contracts, including
+their executable controls, and belongs on the native test executor.
+
+The caller-native `ci-gate` retains its original core/touched, online
+pinned SARIF, shell and Dockerfile negative gates and also requires the source
+audit. Shared merge stops are independent. The original advisory sweep stays
+weekly/manual; the existing maintenance workflow also carries the daily complete
+security report. Product workflow APIs and runtime-evidence/release authorization
+are unchanged.
+
 ## Governance
 
 `main` and release tags are protected by **rulesets** in
