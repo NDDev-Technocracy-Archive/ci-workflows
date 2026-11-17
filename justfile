@@ -6,8 +6,9 @@ default:
     @just --list
 
 # Prepare only the repository's existing hash-locked source dependency.
-setup-checks:
-    python3.13 -I -B -m venv --copies .venv
+setup-checks python=env("UV_PYTHON", "python3.13"):
+    uv venv --copies --python "$1" --no-python-downloads .venv
+    .venv/bin/python -I -B --version
     uv pip install --python .venv/bin/python --require-hashes --only-binary=:all: -r requirements-ci.txt
 
 # Run build-free syntax/workflow checks; the native/executable contract estate stays separate.
