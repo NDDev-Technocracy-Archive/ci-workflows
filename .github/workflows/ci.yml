@@ -466,6 +466,7 @@ jobs:
       uv-version: 0.13.8
       arguments: ${{ format('["{0}"]', github.event_name == 'pull_request' && format('{0}..{1}', github.event.pull_request.base.sha, github.event.pull_request.head.sha) || '--all') }}
       fetch-depth: 0
+      tool-assets: .github/ci-tools.json
       timeout-minutes: 10
 
   merge-stops:

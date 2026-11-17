@@ -390,3 +390,7 @@ examples/   copy-paste callers: per-tier + languages/ quality/ security/ testing
 - Security policy: [SECURITY.md](SECURITY.md)
 - Contributing: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Releases: https://github.com/NDDev-it-com/ci-workflows/releases
+
+The shared source caller declares its actionlint, Zizmor and Betterleaks release
+archives in `.github/ci-tools.json`. Archive and executable size/hash checks
+prepare the hosted job without relying on an editor machine's installed tools.
